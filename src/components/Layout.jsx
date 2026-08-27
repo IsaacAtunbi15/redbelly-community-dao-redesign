@@ -10,7 +10,7 @@ const nav = [
 ]
 
 function Brand() {
-  return <Link className="brand" to="/" aria-label="Redbelly Community DAO home"><span className="brand-logo-wrap"><img className="brand-logo" src="/assets/Redbelly-Community-DAO logo-transparent.png" alt="Redbelly Community DAO" /></span></Link>
+  return <Link className="brand" to="/" aria-label="Redbelly Community DAO home"><span className="brand-logo-wrap"><img className="brand-logo brand-logo--light" src="/assets/Redbelly-Community-DAO logo-transparent.png" alt="Redbelly Community DAO" /><img className="brand-logo brand-logo--dark" src="/assets/Redbelly-Community-DAO logo-dark.png" alt="" aria-hidden="true" /></span></Link>
 }
 
 function DesktopNav() {
