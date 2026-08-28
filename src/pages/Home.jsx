@@ -1,6 +1,6 @@
-import { ArrowRight, Blocks, BookOpen, CalendarDays, CheckCircle2, FileText, Landmark, MessageSquare, Vote, WalletCards } from 'lucide-react'
+import { ArrowRight, Blocks, BookOpen, CalendarDays, FileText, Landmark, MessageSquare } from 'lucide-react'
 import { Link } from 'react-router-dom'
-import { Eyebrow, SectionHeading, Stat, StatusChip, TextLink } from '../components/UI'
+import { Eyebrow, SectionHeading, StatusChip, TextLink } from '../components/UI'
 import { projects, tasks } from '../data/content'
 
 export default function Home({ onJoin, onConnect }) {
@@ -14,13 +14,23 @@ export default function Home({ onJoin, onConnect }) {
           <h1>Explore what’s being built on <span>Redbelly.</span></h1>
           <p>Discover products, people, initiatives and activity across a network built for real-world value.</p>
           <div className="hero-actions"><Link className="button button--light" to="/showcase">Explore the ecosystem <ArrowRight size={17}/></Link><button className="button button--dark-outline" onClick={onJoin}>Find a way to participate</button></div>
-          <div className="hero-proof"><span><CheckCircle2 size={16}/> Products in progress</span><span><CheckCircle2 size={16}/> Builders in the open</span><span><CheckCircle2 size={16}/> Community-led activity</span></div>
+          <div className="hero-proof"><span>Products in progress</span><span>Builders in the open</span><span>Community-led activity</span></div>
         </div>
-        <div className="hero-panel">
-          <div className="hero-panel__head"><span>Ecosystem pulse</span><span className="live-badge"><i/> Live</span></div>
-          <div className="pulse-stats"><Stat label="Products & projects" value="24" detail="7 active this cycle"/><Stat label="Updates" value="08" detail="Across Redbelly"/><Stat label="Builders & members" value="147" detail="Across 23 regions"/><Stat label="Treasury" value="$284k" detail="Publicly tracked"/></div>
-          <div className="pulse-activity"><div><span className="activity-icon"><Vote size={16}/></span><p><b>RCDP-07</b> is now open for voting<small>12 minutes ago · Governance</small></p></div><div><span className="activity-icon"><Blocks size={16}/></span><p><b>EligibilitySDK guide</b> moved to review<small>2 hours ago · Developer activity</small></p></div></div>
-          <button className="panel-connect" onClick={onConnect}><WalletCards size={17}/> Connect to personalise your pulse <ArrowRight size={16}/></button>
+        <div className="ecosystem-map">
+          <div className="ecosystem-map__head"><span>A living network</span><span className="live-badge"><i/> Live now</span></div>
+          <div className="ecosystem-map__canvas">
+            <svg className="ecosystem-lines" viewBox="0 0 540 440" aria-hidden="true">
+              <path d="M118 80 C204 70 191 186 271 216 S386 166 444 104" />
+              <path d="M81 323 C166 280 190 330 271 216 S390 236 467 338" />
+              <path d="M271 216 C317 292 279 344 290 405" />
+            </svg>
+            <div className="ecosystem-core"><span className="ecosystem-core__halo"/><img src="/assets/Redbelly-Community-DAO logo-dark.png" alt=""/><b>Redbelly</b><small>One connected ecosystem</small></div>
+            <Link to="/showcase" className="ecosystem-node ecosystem-node--products"><small>Discover</small><strong>24 products</strong><span>7 active this cycle</span></Link>
+            <Link to="/developers" className="ecosystem-node ecosystem-node--build"><small>Build</small><strong>Tools & guides</strong><span>For the next idea</span></Link>
+            <Link to="/about" className="ecosystem-node ecosystem-node--community"><small>Connect</small><strong>147 people</strong><span>Across 23 regions</span></Link>
+            <Link to="/governance" className="ecosystem-node ecosystem-node--governance"><small>Shape</small><strong>RCDP-07</strong><span>Voting is open</span></Link>
+          </div>
+          <button className="ecosystem-map__foot" onClick={onConnect}><span>Make this view yours</span><span>Connect wallet <ArrowRight size={15}/></span></button>
         </div>
       </div>
       <div className="hero-ticker"><div className="container"><span>Currently building</span><p>Developer onboarding</p><i/><p>Products & projects</p><i/><p>Opportunities cycle 2</p><i/><p>Redbelly Digest</p></div></div>
@@ -28,7 +38,7 @@ export default function Home({ onJoin, onConnect }) {
 
     <section className="section pathways-section"><div className="container">
       <SectionHeading eyebrow="Find your way around" title="One ecosystem. Many ways in." description="Browse what’s live, learn how Redbelly works, or join the people moving it forward." />
-      <div className="pathway-grid">
+      <div className="pathway-grid" aria-label="Ways to explore Redbelly">
         <Link to="/showcase" className="pathway-card"><span className="pathway-number">01</span><h3>Explore products</h3><p>See the tools, protocols and experiments taking shape across Redbelly.</p><span className="card-link">Browse products <ArrowRight size={16}/></span></Link>
         <Link to="/developers" className="pathway-card pathway-card--feature"><span className="pathway-number">02</span><h3>Build on Redbelly</h3><p>Find the technical context and resources to turn an idea into a product.</p><span className="card-link">Start building <ArrowRight size={16}/></span></Link>
         <Link to="/taskboard" className="pathway-card"><span className="pathway-number">03</span><h3>Find opportunities</h3><p>Discover clear, practical ways to support work already moving the ecosystem forward.</p><span className="card-link">View opportunities <ArrowRight size={16}/></span></Link>
@@ -36,7 +46,7 @@ export default function Home({ onJoin, onConnect }) {
       </div>
     </div></section>
 
-    <section className="section section--tint"><div className="container">
+    <section className="section section--tint opportunities-section"><div className="container">
       <SectionHeading eyebrow="Open opportunities" title="Work worth doing." description="Real ecosystem needs, clear scopes and transparent rewards." action={<TextLink to="/taskboard">View all opportunities</TextLink>}/>
       <div className="task-preview">
         {tasks.slice(0,3).map((task, i) => <Link className="task-row" to="/taskboard" key={task.id}><span className="task-index">0{i+1}</span><div className="task-main"><div><span className="mono task-id">{task.id}</span><StatusChip>{task.status}</StatusChip></div><h3>{task.title}</h3><p>{task.category}</p></div><div className="task-meta"><span>Reward</span><b>{task.reward}</b></div><ArrowRight className="task-arrow" size={20}/></Link>)}
