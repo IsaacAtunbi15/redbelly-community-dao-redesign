@@ -623,3 +623,60 @@ body { overflow-x: hidden; }
   .dao-hero__visual::before { font-size:8rem; }
   .dao-definition__intro h2 { font-size:2.45rem; }
 }
+
+/* Middle-ground hero: original Redbelly editorial graphic, not reference-site imagery. */
+.dao-hero__visual {
+  min-height:590px;
+  display:flex;
+  flex-direction:column;
+  isolation:isolate;
+  color:white;
+  background:#1e2a31;
+  border:1px solid #405764;
+  border-radius:20px;
+}
+.dao-hero__visual::before { content:none; }
+.dao-hero__visual::after { content:''; position:absolute; z-index:-1; width:45%; height:125%; right:-12%; top:-12%; background:var(--red); transform:skewX(-10deg); }
+.dao-poster__top,.dao-poster__foot { position:relative; z-index:2; min-height:66px; padding:0 28px; display:flex; align-items:center; justify-content:space-between; gap:20px; }
+.dao-poster__top { border-bottom:1px solid rgba(255,255,255,.13); }
+.dao-poster__top span { font-size:.7rem; font-weight:600; letter-spacing:.1em; text-transform:uppercase; }
+.dao-poster__top small,.dao-poster__foot span { color:#aab6bb; font-size:.58rem; letter-spacing:.08em; text-transform:uppercase; }
+.dao-poster__body { position:relative; z-index:2; flex:1; padding:42px 36px; display:flex; flex-direction:column; justify-content:space-between; }
+.dao-poster__body img { width:88px; height:64px; object-fit:contain; object-position:left center; }
+.dao-poster__words { display:flex; flex-direction:column; align-items:flex-start; }
+.dao-poster__words span { font-size:clamp(3.7rem,5vw,5.6rem); font-weight:600; line-height:.83; letter-spacing:-.065em; }
+.dao-poster__words span:nth-child(2) { color:#ff8a91; margin-left:13%; }
+.dao-poster__words span:nth-child(3) { margin-left:28%; }
+.dao-poster__foot { border-top:1px solid rgba(255,255,255,.13); }
+.dao-poster__foot strong { font-size:.83rem; font-weight:500; }
+.dao-focus-line { height:72px; border-top:1px solid var(--border); background:var(--surface); }
+.dao-focus-line .container { height:100%; display:flex; align-items:center; gap:19px; overflow:hidden; white-space:nowrap; }
+.dao-focus-line span { color:var(--red); font-size:.62rem; font-weight:600; letter-spacing:.1em; text-transform:uppercase; }
+.dao-focus-line p { margin:0; color:var(--muted); font-size:.72rem; }
+.dao-focus-line i { width:3px; height:3px; flex:0 0 auto; border-radius:50%; background:var(--red); }
+
+.showcase-preview .project-mini,.showcase-preview .project-mini:nth-child(2),.showcase-preview .project-mini:nth-child(2):hover {
+  min-height:126px;
+  padding:20px;
+  border:1px solid var(--border);
+  border-radius:14px;
+  background:var(--surface);
+  box-shadow:0 12px 34px rgba(17,27,33,.045);
+  transform:none;
+}
+.showcase-preview .project-mini:last-child { border-bottom:1px solid var(--border); }
+.showcase-preview .project-mini:hover { padding-left:24px; border-color:var(--border-strong); transform:translateX(-4px); }
+.showcase-preview .project-mark { border-radius:10px; }
+.dao-now__grid { border-radius:18px; overflow:hidden; }
+
+@media (max-width:760px) {
+  .dao-hero__visual { min-height:500px; border-radius:16px; }
+  .dao-hero__visual::after { width:52%; right:-25%; }
+  .dao-poster__top,.dao-poster__foot { padding:0 20px; }
+  .dao-poster__body { padding:34px 24px; }
+  .dao-poster__body img { width:72px; height:52px; }
+  .dao-poster__words span { font-size:clamp(3.1rem,15vw,4.3rem); }
+  .dao-poster__foot { align-items:flex-start; flex-direction:column; justify-content:center; gap:4px; }
+  .dao-focus-line .container { overflow-x:auto; }
+  .showcase-preview .project-mini,.showcase-preview .project-mini:nth-child(2),.showcase-preview .project-mini:nth-child(2):hover { padding:16px; border-radius:12px; }
+}

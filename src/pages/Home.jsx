@@ -9,17 +9,18 @@ export default function Home({ onJoin }) {
       <div className="container dao-hero__inner">
         <div className="dao-hero__copy">
           <Eyebrow>Redbelly Community DAO</Eyebrow>
-          <h1>The community shaping Redbelly’s <span>next chapter.</span></h1>
+          <h1>A community with a stake in <span>what comes next.</span></h1>
           <p>Redbelly DAO is where community stakeholders help the network move forward—through ideas, expertise, initiatives and shared decisions.</p>
           <div className="hero-actions"><Link className="button button--primary" to="/about">Discover the DAO <ArrowRight size={17}/></Link><button className="button button--secondary" onClick={onJoin}>Find your place</button></div>
           <div className="dao-hero__statement"><span>Our role</span><p>Turn community participation into meaningful, long-term impact across the Redbelly blockchain ecosystem.</p></div>
         </div>
-        <div className="dao-hero__visual" aria-label="Redbelly community members working together">
-          <div className="dao-hero__image"/>
-          <div className="dao-hero__caption"><span>Community-led</span><strong>Built by people who choose to make a difference.</strong></div>
+        <div className="dao-hero__visual" aria-label="Redbelly DAO stakeholder layer">
+          <div className="dao-poster__top"><span>The stakeholder layer</span><small>Open · Community-led</small></div>
+          <div className="dao-poster__body"><img src="/assets/Redbelly-Community-DAO logo-dark.png" alt=""/><div className="dao-poster__words"><span>Shape</span><span>Support</span><span>Build</span></div></div>
+          <div className="dao-poster__foot"><strong>Participation with purpose.</strong><span>Redbelly DAO · 2026</span></div>
         </div>
       </div>
-      <div className="dao-role-strip"><div className="container"><div><span>01</span><strong>Shared ownership</strong><p>A voice in what Redbelly becomes.</p></div><div><span>02</span><strong>Open participation</strong><p>Many skills. Many ways to contribute.</p></div><div><span>03</span><strong>Useful outcomes</strong><p>Work that strengthens the wider ecosystem.</p></div></div></div>
+      <div className="dao-focus-line"><div className="container"><span>DAO activity spans</span><p>Governance</p><i/><p>Products & tools</p><i/><p>Community initiatives</p><i/><p>Knowledge & resources</p><i/><p>Open opportunities</p></div></div>
     </section>
 
     <section className="section dao-definition" id="dao"><div className="container dao-definition__grid">
