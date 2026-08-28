@@ -7,12 +7,9 @@ export const tasks = [
 ]
 
 export const projects = [
-  { title: 'Averer', maker: 'Redbelly ecosystem', type: 'Infrastructure', mark: 'AV', description: 'Identity verification and on-chain credentials for accountable participation.', accent: 'ruby' },
-  { title: 'Tokeniser', maker: 'Redbelly ecosystem', type: 'Product', mark: 'TK', description: 'A regulated platform supporting the lifecycle of tokenised private equity assets.', accent: 'blue' },
-  { title: 'LayerZero', maker: 'Ecosystem integration', type: 'Infrastructure', mark: 'L0', description: 'Omnichain connectivity linking Redbelly with liquidity across blockchain networks.', accent: 'gold' },
-  { title: 'Community Taskboard', maker: 'Redbelly community', type: 'Community tool', mark: 'TB', description: 'A transparent opportunity board connecting meaningful ecosystem work with community talent.', accent: 'violet' },
+  { title: 'Community Taskboard', maker: 'Redbelly DAO community', type: 'Community tool', mark: 'TB', description: 'A transparent opportunity board connecting DAO work with community talent.', accent: 'ruby' },
   { title: 'Redbelly Troubleshooting Wiki', maker: 'Developer community', type: 'Developer resource', mark: '</>', description: 'Field-tested answers to the problems builders hit while shipping products on Redbelly.', accent: 'blue' },
-  { title: 'Redbelly Digest', maker: 'Redbelly community', type: 'Publication', mark: 'RD', description: 'A concise public record of decisions, initiatives and activity across the DAO.', accent: 'ruby' },
+  { title: 'Redbelly DAO Digest', maker: 'Redbelly DAO community', type: 'Publication', mark: 'RD', description: 'A concise public record of decisions, initiatives and activity across the DAO.', accent: 'violet' },
 ]
 
 export const proposals = [
@@ -31,10 +28,11 @@ export const transactions = [
 export const resources = [
   { title: 'DAO Constitution v1.2', category: 'Governance', description: 'The ratified framework for community governance and member responsibilities.', format: 'PDF' },
   { title: 'Code of Conduct', category: 'DAO essentials', description: 'Shared expectations for respectful, productive participation.', format: 'PDF' },
+  { title: 'DAO structure overview', category: 'DAO essentials', description: 'How leadership, working groups, members and governance fit together.', format: 'Infographic' },
+  { title: 'Current community leadership', category: 'DAO essentials', description: 'The current DAO leaders and their areas of responsibility.', format: 'Directory' },
   { title: 'Proposal submission flow', category: 'Governance', description: 'From an early idea to community discussion, Snapshot vote and execution.', format: 'Guide' },
-  { title: 'Redbelly developer portal', category: 'Developers', description: 'Network architecture, SDKs, APIs and technical references.', format: 'External' },
+  { title: 'DAO operating guide', category: 'DAO operations', description: 'Practical information about meetings, initiatives, reporting and coordination.', format: 'Guide' },
   { title: 'Taskboard rulebook', category: 'Contributors', description: 'How cycles, submissions, reviews, rewards and appeals work.', format: 'Web' },
-  { title: 'Community leadership structure', category: 'DAO essentials', description: 'An overview of guilds, working groups and community stewards.', format: 'PDF' },
 ]
 
 export const digestEditions = [
