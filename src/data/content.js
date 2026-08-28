@@ -7,10 +7,10 @@ export const tasks = [
 ]
 
 export const projects = [
-  { title: 'Community Taskboard', maker: 'DAO Operations Guild', type: 'Platform', mark: 'TB', description: 'A transparent contribution marketplace connecting meaningful work with community talent.', accent: 'ruby' },
-  { title: 'Redbelly Troubleshooting Wiki', maker: 'Developer Guild', type: 'Developer tool', mark: '</>', description: 'Field-tested answers to the problems builders hit while shipping on Redbelly.', accent: 'blue' },
+  { title: 'Community Taskboard', maker: 'Redbelly community', type: 'Platform', mark: 'TB', description: 'A transparent opportunity board connecting meaningful ecosystem work with community talent.', accent: 'ruby' },
+  { title: 'Redbelly Troubleshooting Wiki', maker: 'Developer community', type: 'Developer tool', mark: '</>', description: 'Field-tested answers to the problems builders hit while shipping products on Redbelly.', accent: 'blue' },
   { title: 'CAT Vault', maker: 'Aisha O. + contributors', type: 'Protocol', mark: 'CV', description: 'A compliant ERC-4626 vault prototype with on-chain jurisdiction controls.', accent: 'gold' },
-  { title: 'DAO Digest', maker: 'Communications Guild', type: 'Publication', mark: 'DD', description: 'A concise monthly record of decisions, shipped work and opportunities across the DAO.', accent: 'violet' },
+  { title: 'Redbelly Digest', maker: 'Redbelly community', type: 'Publication', mark: 'RD', description: 'A concise monthly record of products, decisions, shipped work and opportunities across the ecosystem.', accent: 'violet' },
 ]
 
 export const proposals = [

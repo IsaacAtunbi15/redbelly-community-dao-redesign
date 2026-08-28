@@ -1,4 +1,4 @@
-import { ArrowRight, Blocks, BookOpen, CalendarDays, CheckCircle2, Code2, FileText, Landmark, MessageSquare, Sparkles, Users, Vote, WalletCards } from 'lucide-react'
+import { ArrowRight, Blocks, BookOpen, CalendarDays, CheckCircle2, FileText, Landmark, MessageSquare, Vote, WalletCards } from 'lucide-react'
 import { Link } from 'react-router-dom'
 import { Eyebrow, SectionHeading, Stat, StatusChip, TextLink } from '../components/UI'
 import { projects, tasks } from '../data/content'
@@ -10,47 +10,47 @@ export default function Home({ onJoin, onConnect }) {
       <div className="hero-orb" aria-hidden="true" />
       <div className="container home-hero__inner">
         <div className="hero-copy">
-          <Eyebrow tone="light"><span className="live-dot" /> Community-owned. Contribution-led.</Eyebrow>
-          <h1>The community layer of <span>Redbelly Network.</span></h1>
-          <p>Discover the work, people and decisions moving Redbelly forward—and find a meaningful way to contribute.</p>
-          <div className="hero-actions"><button className="button button--light" onClick={onJoin}>Find your place <ArrowRight size={17}/></button><Link className="button button--dark-outline" to="/taskboard">Explore the Taskboard</Link></div>
-          <div className="hero-proof"><span><CheckCircle2 size={16}/> Public by default</span><span><CheckCircle2 size={16}/> Built in the open</span><span><CheckCircle2 size={16}/> Rewards in RBNT</span></div>
+          <Eyebrow tone="light"><span className="live-dot" /> The Redbelly ecosystem, in motion</Eyebrow>
+          <h1>Explore what’s being built on <span>Redbelly.</span></h1>
+          <p>Discover products, people, initiatives and activity across a network built for real-world value.</p>
+          <div className="hero-actions"><Link className="button button--light" to="/showcase">Explore the ecosystem <ArrowRight size={17}/></Link><button className="button button--dark-outline" onClick={onJoin}>Find a way to participate</button></div>
+          <div className="hero-proof"><span><CheckCircle2 size={16}/> Products in progress</span><span><CheckCircle2 size={16}/> Builders in the open</span><span><CheckCircle2 size={16}/> Community-led activity</span></div>
         </div>
         <div className="hero-panel">
-          <div className="hero-panel__head"><span>DAO pulse</span><span className="live-badge"><i/> Live</span></div>
-          <div className="pulse-stats"><Stat label="Active tasks" value="12" detail="4 added this cycle"/><Stat label="Proposals" value="03" detail="1 closing soon"/><Stat label="Contributors" value="147" detail="Across 23 regions"/><Stat label="Treasury" value="$284k" detail="Publicly tracked"/></div>
-          <div className="pulse-activity"><div><span className="activity-icon"><Vote size={16}/></span><p><b>RCDP-07</b> is now open for voting<small>12 minutes ago</small></p></div><div><span className="activity-icon"><Blocks size={16}/></span><p><b>EligibilitySDK guide</b> moved to review<small>2 hours ago</small></p></div></div>
+          <div className="hero-panel__head"><span>Ecosystem pulse</span><span className="live-badge"><i/> Live</span></div>
+          <div className="pulse-stats"><Stat label="Products & projects" value="24" detail="7 active this cycle"/><Stat label="Updates" value="08" detail="Across Redbelly"/><Stat label="Builders & members" value="147" detail="Across 23 regions"/><Stat label="Treasury" value="$284k" detail="Publicly tracked"/></div>
+          <div className="pulse-activity"><div><span className="activity-icon"><Vote size={16}/></span><p><b>RCDP-07</b> is now open for voting<small>12 minutes ago · Governance</small></p></div><div><span className="activity-icon"><Blocks size={16}/></span><p><b>EligibilitySDK guide</b> moved to review<small>2 hours ago · Developer activity</small></p></div></div>
           <button className="panel-connect" onClick={onConnect}><WalletCards size={17}/> Connect to personalise your pulse <ArrowRight size={16}/></button>
         </div>
       </div>
-      <div className="hero-ticker"><div className="container"><span>Currently building</span><p>Developer onboarding</p><i/><p>Community showcase</p><i/><p>Taskboard cycle 2</p><i/><p>DAO Digest</p></div></div>
+      <div className="hero-ticker"><div className="container"><span>Currently building</span><p>Developer onboarding</p><i/><p>Products & projects</p><i/><p>Opportunities cycle 2</p><i/><p>Redbelly Digest</p></div></div>
     </section>
 
     <section className="section pathways-section"><div className="container">
-      <SectionHeading eyebrow="Start here" title="One community. Many ways in." description="You don’t need a title or permission. Follow the path that matches what you want to do." />
+      <SectionHeading eyebrow="Find your way around" title="One ecosystem. Many ways in." description="Browse what’s live, learn how Redbelly works, or join the people moving it forward." />
       <div className="pathway-grid">
-        <Link to="/governance" className="pathway-card"><span className="pathway-number">01</span><span className="icon-box"><Vote/></span><h3>Shape decisions</h3><p>Follow proposals, understand the process and make your voice count.</p><span className="card-link">Explore governance <ArrowRight size={16}/></span></Link>
-        <Link to="/taskboard" className="pathway-card pathway-card--feature"><span className="pathway-number">02</span><span className="icon-box"><Sparkles/></span><h3>Contribute skills</h3><p>Take on scoped work, ship useful outcomes and earn reputation.</p><span className="card-link">Find open work <ArrowRight size={16}/></span></Link>
-        <Link to="/developers" className="pathway-card"><span className="pathway-number">03</span><span className="icon-box"><Code2/></span><h3>Build products</h3><p>Start developing on a compliant, high-performance network.</p><span className="card-link">Start building <ArrowRight size={16}/></span></Link>
-        <Link to="/showcase" className="pathway-card"><span className="pathway-number">04</span><span className="icon-box"><Users/></span><h3>Meet the builders</h3><p>Discover community-made tools, research and experiments.</p><span className="card-link">See the showcase <ArrowRight size={16}/></span></Link>
+        <Link to="/showcase" className="pathway-card"><span className="pathway-number">01</span><h3>Explore products</h3><p>See the tools, protocols and experiments taking shape across Redbelly.</p><span className="card-link">Browse products <ArrowRight size={16}/></span></Link>
+        <Link to="/developers" className="pathway-card pathway-card--feature"><span className="pathway-number">02</span><h3>Build on Redbelly</h3><p>Find the technical context and resources to turn an idea into a product.</p><span className="card-link">Start building <ArrowRight size={16}/></span></Link>
+        <Link to="/taskboard" className="pathway-card"><span className="pathway-number">03</span><h3>Find opportunities</h3><p>Discover clear, practical ways to support work already moving the ecosystem forward.</p><span className="card-link">View opportunities <ArrowRight size={16}/></span></Link>
+        <Link to="/governance" className="pathway-card"><span className="pathway-number">04</span><h3>Follow decisions</h3><p>Understand the proposals, funding and choices shaping what comes next.</p><span className="card-link">Explore governance <ArrowRight size={16}/></span></Link>
       </div>
     </div></section>
 
     <section className="section section--tint"><div className="container">
-      <SectionHeading eyebrow="Open opportunities" title="Work worth doing." description="Real ecosystem needs, clear scopes and transparent rewards." action={<TextLink to="/taskboard">View all tasks</TextLink>}/>
+      <SectionHeading eyebrow="Open opportunities" title="Work worth doing." description="Real ecosystem needs, clear scopes and transparent rewards." action={<TextLink to="/taskboard">View all opportunities</TextLink>}/>
       <div className="task-preview">
         {tasks.slice(0,3).map((task, i) => <Link className="task-row" to="/taskboard" key={task.id}><span className="task-index">0{i+1}</span><div className="task-main"><div><span className="mono task-id">{task.id}</span><StatusChip>{task.status}</StatusChip></div><h3>{task.title}</h3><p>{task.category}</p></div><div className="task-meta"><span>Reward</span><b>{task.reward}</b></div><ArrowRight className="task-arrow" size={20}/></Link>)}
       </div>
     </div></section>
 
     <section className="section showcase-preview"><div className="container showcase-layout">
-      <div className="showcase-intro"><Eyebrow>Community showcase</Eyebrow><h2>Built here.<br/>Shared with everyone.</h2><p>Tools, protocols and stories created by contributors across the Redbelly ecosystem.</p><TextLink to="/showcase">Explore all projects</TextLink></div>
+      <div className="showcase-intro"><Eyebrow>Products & projects</Eyebrow><h2>Built here.<br/>Shared with everyone.</h2><p>Tools, protocols and stories created by builders across the Redbelly ecosystem.</p><TextLink to="/showcase">Explore the ecosystem</TextLink></div>
       <div className="showcase-stack">{projects.slice(0,3).map((project, i) => <Link to="/showcase" className={`project-mini project-mini--${project.accent}`} key={project.title}><span className="project-mark">{project.mark}</span><div><small>{project.type}</small><h3>{project.title}</h3><p>{project.maker}</p></div><span className="project-count">0{i+1}</span></Link>)}</div>
     </div></section>
 
     <section className="section digest-preview"><div className="container digest-card">
-      <div className="digest-visual"><span>DAO<br/>DIGEST</span><strong>04</strong><small>AUG · 2026</small></div>
-      <div className="digest-content"><Eyebrow>Latest publication</Eyebrow><h2>The contribution layer comes alive.</h2><p>Cycle 2 opens. The Taskboard evolves. Three community-built developer resources ship. Catch up on the month across the DAO.</p><div className="digest-meta"><span><CalendarDays size={15}/> 6 min read</span><span><BookOpen size={15}/> August edition</span></div><TextLink to="/digest">Read the latest Digest</TextLink></div>
+      <div className="digest-visual"><span>REDBELLY<br/>DIGEST</span><strong>04</strong><small>AUG · 2026</small></div>
+      <div className="digest-content"><Eyebrow>Latest ecosystem update</Eyebrow><h2>The ecosystem keeps moving.</h2><p>New products, developer resources, community decisions and opportunities are taking shape. Catch up on the month across Redbelly.</p><div className="digest-meta"><span><CalendarDays size={15}/> 6 min read</span><span><BookOpen size={15}/> August edition</span></div><TextLink to="/digest">Read the latest update</TextLink></div>
     </div></section>
 
     <section className="section values-section"><div className="container">
