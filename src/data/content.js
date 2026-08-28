@@ -7,21 +7,23 @@ export const tasks = [
 ]
 
 export const projects = [
-  { title: 'Community Taskboard', maker: 'Redbelly community', type: 'Platform', mark: 'TB', description: 'A transparent opportunity board connecting meaningful ecosystem work with community talent.', accent: 'ruby' },
-  { title: 'Redbelly Troubleshooting Wiki', maker: 'Developer community', type: 'Developer tool', mark: '</>', description: 'Field-tested answers to the problems builders hit while shipping products on Redbelly.', accent: 'blue' },
-  { title: 'CAT Vault', maker: 'Aisha O. + contributors', type: 'Protocol', mark: 'CV', description: 'A compliant ERC-4626 vault prototype with on-chain jurisdiction controls.', accent: 'gold' },
-  { title: 'Redbelly Digest', maker: 'Redbelly community', type: 'Publication', mark: 'RD', description: 'A concise monthly record of products, decisions, shipped work and opportunities across the ecosystem.', accent: 'violet' },
+  { title: 'Averer', maker: 'Redbelly ecosystem', type: 'Infrastructure', mark: 'AV', description: 'Identity verification and on-chain credentials for accountable participation.', accent: 'ruby' },
+  { title: 'Tokeniser', maker: 'Redbelly ecosystem', type: 'Product', mark: 'TK', description: 'A regulated platform supporting the lifecycle of tokenised private equity assets.', accent: 'blue' },
+  { title: 'LayerZero', maker: 'Ecosystem integration', type: 'Infrastructure', mark: 'L0', description: 'Omnichain connectivity linking Redbelly with liquidity across blockchain networks.', accent: 'gold' },
+  { title: 'Community Taskboard', maker: 'Redbelly community', type: 'Community tool', mark: 'TB', description: 'A transparent opportunity board connecting meaningful ecosystem work with community talent.', accent: 'violet' },
+  { title: 'Redbelly Troubleshooting Wiki', maker: 'Developer community', type: 'Developer resource', mark: '</>', description: 'Field-tested answers to the problems builders hit while shipping products on Redbelly.', accent: 'blue' },
+  { title: 'Redbelly Digest', maker: 'Redbelly community', type: 'Publication', mark: 'RD', description: 'A concise public record of decisions, initiatives and activity across the DAO.', accent: 'ruby' },
 ]
 
 export const proposals = [
-  { id: 'RCDP-07', title: 'Adopt Cycle 2 taskboard rules', status: 'Active', ends: '2d 14h', yes: 78, votes: '1.28M RBNT' },
+  { id: 'RCDP-07', title: 'Adopt the community initiative framework', status: 'Active', ends: '2d 14h', yes: 78, votes: '1.28M RBNT' },
   { id: 'RCDP-06', title: 'Fund the Community Showcase pilot', status: 'Passed', ends: 'Executed', yes: 91, votes: '1.74M RBNT' },
   { id: 'RCDP-05', title: 'Ratify contributor Code of Conduct', status: 'Passed', ends: 'Executed', yes: 96, votes: '2.08M RBNT' },
 ]
 
 export const transactions = [
-  { type: 'Contributor rewards', date: '26 Aug 2026', amount: '-18,400 RBNT', status: 'Confirmed' },
-  { type: 'Taskboard allocation', date: '20 Aug 2026', amount: '-7,250 RBNT', status: 'Confirmed' },
+  { type: 'Community initiative funding', date: '26 Aug 2026', amount: '-18,400 RBNT', status: 'Confirmed' },
+  { type: 'Developer ecosystem support', date: '20 Aug 2026', amount: '-7,250 RBNT', status: 'Confirmed' },
   { type: 'Treasury inflow', date: '15 Aug 2026', amount: '+42,000 RBNT', status: 'Confirmed' },
   { type: 'Community tooling', date: '09 Aug 2026', amount: '-3,100 RBNT', status: 'Confirmed' },
 ]
@@ -36,7 +38,7 @@ export const resources = [
 ]
 
 export const digestEditions = [
-  { month: 'August 2026', number: 'Edition 04', title: 'The contribution layer comes alive', summary: 'Cycle 2 opens, the Taskboard evolves and three community-built developer resources ship.', featured: true },
+  { month: 'August 2026', number: 'Edition 04', title: 'Community ideas move into action', summary: 'A new initiative framework, three public developer resources and the latest ecosystem decisions.', featured: true },
   { month: 'July 2026', number: 'Edition 03', title: 'From proposals to products', summary: 'A month of governance decisions, working prototypes and a clearer contributor path.' },
   { month: 'June 2026', number: 'Edition 02', title: 'Builders take the lead', summary: 'New technical guild initiatives and the first community showcase nominations.' },
 ]

@@ -489,3 +489,137 @@ body { overflow-x: hidden; }
   .ecosystem-map__foot > span:first-child { display:none; }
   .ecosystem-map__foot { justify-content:flex-end; }
 }
+
+/* Redbelly DAO public site — stakeholder-led, editorial, and theme complete. */
+.dao-hero { position:relative; overflow:hidden; background:var(--bg); border-bottom:1px solid var(--border); }
+.dao-hero__inner { min-height:720px; padding:82px 0; display:grid; grid-template-columns:.94fr 1.06fr; align-items:center; gap:clamp(58px,7vw,110px); }
+.dao-hero__copy { min-width:0; position:relative; z-index:2; }
+.dao-hero__copy h1 { max-width:720px; margin:23px 0 26px; color:var(--ink); font-size:clamp(3.7rem,5.6vw,6.25rem); line-height:.95; letter-spacing:-.055em; }
+.dao-hero__copy h1 span { color:var(--red); }
+.dao-hero__copy > p { max-width:650px; margin-bottom:0; color:var(--muted); font-size:1.12rem; line-height:1.75; }
+.dao-hero__copy .hero-actions { margin-top:35px; }
+.dao-hero__statement { max-width:580px; margin-top:55px; padding-top:22px; border-top:1px solid var(--border); display:grid; grid-template-columns:82px 1fr; gap:20px; }
+.dao-hero__statement span { color:var(--red); font-size:.65rem; font-weight:600; letter-spacing:.1em; text-transform:uppercase; }
+.dao-hero__statement p { margin:0; color:var(--ink); font-size:.78rem; line-height:1.65; }
+.dao-hero__visual { min-height:590px; position:relative; overflow:hidden; background:var(--surface-2); }
+.dao-hero__image { position:absolute; inset:0; background:linear-gradient(180deg,transparent 42%,rgba(18,27,32,.84) 100%),url('/assets/dao-hero-original.png') center/cover no-repeat; transform:scale(1.02); }
+.dao-hero__visual::before { content:'DAO'; position:absolute; z-index:1; right:-.035em; top:-.12em; color:rgba(255,255,255,.12); font-size:12rem; font-weight:700; letter-spacing:-.08em; line-height:1; }
+.dao-hero__caption { position:absolute; z-index:2; left:38px; right:38px; bottom:34px; display:flex; align-items:flex-end; justify-content:space-between; gap:30px; color:white; }
+.dao-hero__caption span { color:#ff9ca2; font-size:.62rem; font-weight:600; letter-spacing:.12em; text-transform:uppercase; }
+.dao-hero__caption strong { max-width:340px; font-size:1.35rem; line-height:1.25; font-weight:500; text-align:right; }
+.dao-role-strip { border-top:1px solid var(--border); background:var(--surface); }
+.dao-role-strip .container { display:grid; grid-template-columns:repeat(3,1fr); }
+.dao-role-strip .container > div { min-height:130px; padding:28px 38px 26px 0; display:grid; grid-template-columns:35px 1fr; grid-template-rows:auto auto; column-gap:13px; align-content:center; border-right:1px solid var(--border); }
+.dao-role-strip .container > div + div { padding-left:38px; }
+.dao-role-strip .container > div:last-child { border-right:0; }
+.dao-role-strip span { grid-row:1/3; color:var(--red); font-size:.61rem; letter-spacing:.08em; }
+.dao-role-strip strong { color:var(--ink); font-size:.86rem; font-weight:600; }
+.dao-role-strip p { margin:4px 0 0; color:var(--muted); font-size:.7rem; line-height:1.5; }
+
+:root[data-theme='dark'] .dao-hero { background:#121b20; }
+:root[data-theme='dark'] .dao-hero__copy h1,:root[data-theme='dark'] .dao-hero__statement p { color:#f2f4f4; }
+:root[data-theme='dark'] .dao-hero__copy > p { color:#aab6bb; }
+:root[data-theme='dark'] .dao-hero__statement { border-color:#3c505a; }
+:root[data-theme='dark'] .dao-hero__copy .button--secondary { color:white; background:transparent; border-color:#526873; }
+
+.dao-definition__grid { display:grid; grid-template-columns:.8fr 1.2fr; gap:clamp(70px,10vw,150px); align-items:start; }
+.dao-definition__intro { position:sticky; top:130px; }
+.dao-definition__intro h2 { max-width:520px; margin:18px 0 22px; font-size:clamp(2.8rem,4.3vw,5rem); line-height:1; }
+.dao-definition__intro p { max-width:540px; margin-bottom:30px; font-size:1rem; }
+.dao-scope-list { border-top:1px solid var(--border-strong); }
+.dao-scope-list article { min-height:155px; padding:31px 0; display:grid; grid-template-columns:100px 1fr; gap:28px; border-bottom:1px solid var(--border); }
+.dao-scope-list article > span { color:var(--red); font-size:.64rem; font-weight:600; letter-spacing:.1em; text-transform:uppercase; }
+.dao-scope-list h3 { margin:0 0 10px; font-size:1.25rem; }
+.dao-scope-list p { max-width:500px; margin:0; font-size:.82rem; }
+
+.participation-section { background:var(--surface-2); }
+.participation-section .section-heading h2 { max-width:760px; }
+.participation-list { border-top:1px solid var(--border-strong); }
+.participation-list a { min-height:145px; display:grid; grid-template-columns:70px minmax(190px,.65fr) 1fr 30px; align-items:center; gap:28px; border-bottom:1px solid var(--border); transition:padding .22s,background .22s; }
+.participation-list a:hover { padding:0 18px; background:color-mix(in srgb,var(--surface) 68%,transparent); }
+.participation-list a > span { color:var(--red); font-size:.68rem; letter-spacing:.08em; }
+.participation-list h3 { margin:0; font-size:1.35rem; }
+.participation-list p { max-width:580px; margin:0; font-size:.82rem; }
+.participation-list svg { color:var(--red); }
+
+.showcase-preview::before { display:none; }
+.showcase-preview .showcase-layout { gap:clamp(65px,9vw,130px); }
+.showcase-preview .project-mini,.showcase-preview .project-mini:nth-child(2),.showcase-preview .project-mini:nth-child(2):hover { transform:none; border-radius:0; box-shadow:none; }
+.showcase-preview .project-mini { min-height:145px; padding:22px 0; border:0; border-top:1px solid var(--border); background:transparent; }
+.showcase-preview .project-mini:last-child { border-bottom:1px solid var(--border); }
+.showcase-preview .project-mini:hover { padding-left:12px; background:transparent; }
+.showcase-preview .project-mark { border-radius:0; }
+
+.digest-preview { padding-top:60px; padding-bottom:140px; }
+.digest-preview .digest-card { border-radius:0; box-shadow:none; }
+.digest-preview .digest-visual { border-radius:0; }
+
+.dao-now { background:var(--surface-2); }
+.dao-now__grid { display:grid; grid-template-columns:1.35fr 1fr; gap:1px; background:var(--border); border:1px solid var(--border); }
+.dao-now__grid article { min-height:290px; padding:42px; display:flex; flex-direction:column; align-items:flex-start; background:var(--surface); }
+.dao-now__grid .dao-now__lead { grid-row:span 2; min-height:581px; padding:58px; justify-content:flex-end; background:var(--slate); color:white; }
+.dao-now__grid article > span { color:var(--red); font-size:.65rem; font-weight:600; letter-spacing:.1em; text-transform:uppercase; }
+.dao-now__grid h3 { max-width:530px; margin:22px 0 12px; font-size:1.55rem; line-height:1.15; }
+.dao-now__grid .dao-now__lead h3 { font-size:clamp(2.7rem,4vw,4.5rem); }
+.dao-now__grid p { max-width:520px; margin-bottom:25px; font-size:.8rem; }
+.dao-now__grid .dao-now__lead p { color:#aeb8bc; font-size:.9rem; }
+.dao-now__grid .dao-now__lead .text-link { color:white; margin-top:5px; }
+
+.values-section::before { display:none; }
+.value-grid > div { background:transparent; }
+
+/* Light pages are designed as light pages, rather than colour-inverted dark panels. */
+:root:not([data-theme='dark']) .page-hero { color:var(--ink); background:#edf2f4; border-bottom:1px solid var(--border); }
+:root:not([data-theme='dark']) .page-hero::before { background-image:linear-gradient(rgba(36,51,61,.045) 1px,transparent 1px),linear-gradient(90deg,rgba(36,51,61,.045) 1px,transparent 1px); }
+:root:not([data-theme='dark']) .page-hero::after { border-color:rgba(36,51,61,.08); }
+:root:not([data-theme='dark']) .page-hero p { color:var(--muted); }
+:root:not([data-theme='dark']) .page-hero .hero-inline-stats .stat { border-color:var(--border); }
+:root:not([data-theme='dark']) .page-hero .hero-inline-stats strong { color:var(--ink); }
+:root:not([data-theme='dark']) .page-hero .hero-inline-stats span,:root:not([data-theme='dark']) .page-hero .hero-inline-stats small { color:var(--muted); }
+:root:not([data-theme='dark']) .page-hero .button--light { color:white; background:var(--red); }
+:root:not([data-theme='dark']) .page-hero .button--dark-outline { color:var(--ink); border-color:var(--border-strong); }
+:root:not([data-theme='dark']) .dev-hero { color:var(--ink); background:#edf2f4; border-bottom:1px solid var(--border); }
+:root:not([data-theme='dark']) .dev-hero p { color:var(--muted); }
+:root:not([data-theme='dark']) .dev-hero .eyebrow--light { color:var(--red); }
+:root:not([data-theme='dark']) .dev-hero .button--light { color:white; background:var(--red); }
+:root:not([data-theme='dark']) .dev-hero .button--dark-outline { color:var(--ink); border-color:var(--border-strong); }
+
+@media (max-width:1050px) {
+  .dao-hero__inner { grid-template-columns:1fr; padding-bottom:70px; }
+  .dao-hero__copy { max-width:780px; }
+  .dao-hero__visual { min-height:540px; }
+  .dao-definition__grid { grid-template-columns:1fr; gap:70px; }
+  .dao-definition__intro { position:static; }
+}
+
+@media (max-width:760px) {
+  .dao-hero__inner { min-height:0; padding:82px 0 54px; gap:55px; }
+  .dao-hero__copy h1 { font-size:clamp(3rem,13vw,4.25rem); overflow-wrap:normal; word-break:normal; }
+  .dao-hero__copy > p { font-size:.98rem; }
+  .dao-hero__statement { margin-top:42px; grid-template-columns:1fr; gap:10px; }
+  .dao-hero__visual { min-height:440px; }
+  .dao-hero__caption { left:24px; right:24px; bottom:24px; align-items:flex-start; flex-direction:column; gap:10px; }
+  .dao-hero__caption strong { max-width:290px; font-size:1.18rem; text-align:left; }
+  .dao-role-strip .container { grid-template-columns:1fr; }
+  .dao-role-strip .container > div,.dao-role-strip .container > div + div { min-height:110px; padding:24px 0; border-right:0; border-bottom:1px solid var(--border); }
+  .dao-role-strip .container > div:last-child { border-bottom:0; }
+  .dao-definition__grid { gap:52px; }
+  .dao-definition__intro h2 { font-size:2.75rem; }
+  .dao-scope-list article { min-height:0; grid-template-columns:1fr; gap:16px; padding:30px 0; }
+  .participation-list a { min-height:0; padding:30px 0; grid-template-columns:35px 1fr 24px; gap:15px; }
+  .participation-list a:hover { padding:30px 10px; }
+  .participation-list h3 { font-size:1.12rem; }
+  .participation-list p { grid-column:2/4; }
+  .participation-list a > svg { grid-column:3; grid-row:1; }
+  .digest-preview { padding-top:30px; padding-bottom:100px; }
+  .dao-now__grid { grid-template-columns:1fr; }
+  .dao-now__grid .dao-now__lead { grid-row:auto; min-height:450px; padding:38px 28px; }
+  .dao-now__grid article { min-height:280px; padding:34px 28px; }
+  .dao-now__grid .dao-now__lead h3 { font-size:2.6rem; }
+}
+
+@media (max-width:480px) {
+  .dao-hero__visual { min-height:390px; }
+  .dao-hero__visual::before { font-size:8rem; }
+  .dao-definition__intro h2 { font-size:2.45rem; }
+}

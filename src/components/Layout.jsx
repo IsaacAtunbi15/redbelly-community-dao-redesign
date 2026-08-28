@@ -3,10 +3,11 @@ import { Link, NavLink, useLocation } from 'react-router-dom'
 import { ArrowRight, BookOpen, Check, ChevronDown, CircleUserRound, ExternalLink, GitBranch, LayoutDashboard, Menu, Moon, Network, Sun, Wallet, X } from 'lucide-react'
 
 const nav = [
-  { label: 'Explore', children: [['Ecosystem updates', '/digest'], ['Products & projects', '/showcase'], ['Resources', '/resources']] },
-  { label: 'Participate', children: [['Opportunities', '/taskboard'], ['Governance', '/governance'], ['Treasury', '/treasury']] },
+  { label: 'About the DAO', to: '/about' },
+  { label: 'Ecosystem', children: [['Products & projects', '/showcase'], ['DAO updates', '/digest'], ['Resources', '/resources']] },
+  { label: 'Governance', to: '/governance' },
+  { label: 'Participate', children: [['Community opportunities', '/taskboard'], ['Public treasury', '/treasury'], ['Member space', '/app/dashboard']] },
   { label: 'Developers', to: '/developers' },
-  { label: 'About', to: '/about' },
 ]
 
 function Brand() {
@@ -32,14 +33,14 @@ export function SiteLayout({ children, theme, onToggleTheme, wallet, onConnect, 
   const memberMode = location.pathname.startsWith('/app/')
 
   return <div className="site-shell">
-    {!memberMode && <div className="announcement"><span>Cycle 2 is live</span><Link to="/taskboard">Explore open opportunities <ArrowRight size={13} /></Link></div>}
+    {!memberMode && <div className="announcement"><span>Redbelly Community DAO</span><Link to="/about">See how stakeholders shape the ecosystem <ArrowRight size={13} /></Link></div>}
     <header className="site-header">
       <div className="container header-inner">
         <Brand />
         <DesktopNav />
         <div className="header-actions">
           <ThemeToggle theme={theme} onToggle={onToggleTheme} />
-          <button className="button button--ghost join-desktop" onClick={onJoin}>Join the community</button>
+          <button className="button button--ghost join-desktop" onClick={onJoin}>Participate</button>
           <button className={`button button--primary wallet-button ${wallet.address ? 'is-connected' : ''}`} onClick={onConnect}>
             {wallet.address ? <CircleUserRound size={17} /> : <Wallet size={17} />}
             {wallet.address ? `${wallet.address.slice(0, 5)}…${wallet.address.slice(-4)}` : 'Connect wallet'}
@@ -65,9 +66,9 @@ function Footer({ onJoin }) {
     <div className="container">
       <div className="footer-cta"><div><span className="eyebrow eyebrow--light">Your next contribution starts here</span><h2>Help shape what Redbelly becomes.</h2></div><button className="button button--light" onClick={onJoin}>Join the community <ArrowRight size={17} /></button></div>
       <div className="footer-grid">
-        <div className="footer-brand"><Brand /><p>An open contribution layer for the people building, governing and growing the Redbelly ecosystem.</p><div className="social-row"><a href="https://discord.com/invite/redbelly" aria-label="Discord">D</a><a href="https://x.com/redbellynetwork" aria-label="X">X</a><a href="https://github.com/redbellynetwork" aria-label="GitHub"><GitBranch size={16} /></a></div></div>
-        <div><h3>Explore</h3><Link to="/digest">Ecosystem updates</Link><Link to="/showcase">Products & projects</Link><Link to="/resources">Resources</Link></div>
-        <div><h3>Participate</h3><Link to="/taskboard">Opportunities</Link><Link to="/governance">Governance</Link><Link to="/treasury">Treasury</Link></div>
+        <div className="footer-brand"><Brand /><p>A shared foundation for the stakeholders shaping, supporting and growing the Redbelly blockchain ecosystem.</p><div className="social-row"><a href="https://discord.com/invite/redbelly" aria-label="Discord">D</a><a href="https://x.com/redbellynetwork" aria-label="X">X</a><a href="https://github.com/redbellynetwork" aria-label="GitHub"><GitBranch size={16} /></a></div></div>
+        <div><h3>The DAO</h3><Link to="/about">About the DAO</Link><Link to="/governance">Governance</Link><Link to="/treasury">Public treasury</Link></div>
+        <div><h3>Explore</h3><Link to="/showcase">Products & projects</Link><Link to="/digest">DAO updates</Link><Link to="/resources">Resources</Link><Link to="/taskboard">Community opportunities</Link></div>
         <div><h3>Build</h3><Link to="/developers">Developer start</Link><a href="https://vine.redbelly.network" target="_blank" rel="noreferrer">Technical docs <ExternalLink size={12} /></a><a href="https://redbelly.network" target="_blank" rel="noreferrer">Redbelly Network <ExternalLink size={12} /></a></div>
       </div>
       <div className="footer-bottom"><span>© 2026 Redbelly Community DAO</span><div><Link to="/resources">Privacy</Link><Link to="/resources">Terms</Link><span>Built in the open</span></div></div>

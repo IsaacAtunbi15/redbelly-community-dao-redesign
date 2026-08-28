@@ -26,7 +26,11 @@ const demoWallet = { address: '0x71C4aB58F29D63c408eB18390A2c77D89F20', chainId:
 
 export default function App() {
   const navigate = useNavigate()
-  const [theme, setTheme] = useState(() => localStorage.getItem('rb-theme') || (window.matchMedia?.('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'))
+  const [theme, setTheme] = useState(() => {
+    const requested = new URLSearchParams(window.location.search).get('theme')
+    if (requested === 'light' || requested === 'dark') return requested
+    return localStorage.getItem('rb-theme') || (window.matchMedia?.('(prefers-color-scheme: dark)').matches ? 'dark' : 'light')
+  })
   const [walletOpen, setWalletOpen] = useState(false)
   const [joinOpen, setJoinOpen] = useState(false)
   const [wallet, setWallet] = useState(() => new URLSearchParams(window.location.search).has('preview') ? demoWallet : { address: '', chainId: '', correctNetwork: false, networkName: '' })
