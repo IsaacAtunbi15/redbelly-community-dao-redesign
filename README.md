@@ -1,4 +1,4 @@
-# Redbelly Community DAO — Website Redesign
+# Redbelly Community DAO: Website Redesign
 
 A working frontend prototype for a ground-up redesign of `redbellydao.network`. The project separates a complete public DAO website from a personalised wallet-connected member experience.
 
@@ -54,7 +54,7 @@ The real-wallet flow detects Redbelly Mainnet (chain ID `151`) and Testnet (chai
 
 ## Content and data status
 
-This is a design-focused frontend skeleton, as permitted by the redesign brief. Task names and resource titles are based on supplied DAO materials and current public properties. Dashboard metrics, proposal vote totals, treasury balances, contributor identities, activity events, and Digest copy are representative demo data—not production DAO records.
+This is a design-focused frontend skeleton, as permitted by the redesign brief. Task names and resource titles are based on supplied DAO materials and current public properties. Dashboard metrics, proposal vote totals, treasury balances, contributor identities, activity events, and Digest copy are representative demo data, not production DAO records.
 
 Production integration points include:
 

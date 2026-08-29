@@ -10,17 +10,20 @@
     "lint": "eslint . --max-warnings 0"
   },
   "dependencies": {
+    "@tanstack/react-query": "^5.102.8",
     "@vitejs/plugin-react": "latest",
-    "vite": "latest",
-    "typescript": "latest",
+    "lucide-react": "latest",
     "react": "latest",
     "react-dom": "latest",
     "react-router-dom": "latest",
-    "lucide-react": "latest"
+    "typescript": "latest",
+    "viem": "^2.56.1",
+    "vite": "latest",
+    "wagmi": "^3.7.7"
   },
   "devDependencies": {
-    "eslint": "latest",
     "@eslint/js": "latest",
+    "eslint": "latest",
     "eslint-plugin-react-hooks": "latest",
     "eslint-plugin-react-refresh": "latest",
     "globals": "latest"

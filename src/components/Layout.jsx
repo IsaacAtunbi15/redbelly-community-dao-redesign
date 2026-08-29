@@ -24,6 +24,42 @@ export function SiteLayout({ children, theme, onToggleTheme, wallet, onConnect, 
   const memberMode = location.pathname.startsWith('/app/')
   const [publicMenuOpen, setPublicMenuOpen] = useState(false)
 
+  useEffect(() => {
+    if (window.matchMedia?.('(prefers-reduced-motion: reduce)').matches) return
+    const selector = [
+      '.section-heading', '.simple-section-head', '.simple-path', '.simple-connected__card',
+      '.page-hero .container > *', '.digest-feature', '.story-card', '.project-card',
+      '.task-card', '.treasury-overview', '.chart-card', '.allocation-card', '.data-table',
+      '.active-proposal', '.proposal-row', '.governance-guide', '.start-steps article',
+      '.network-panel', '.tool-grid > *', '.resource-list article', '.about-manifesto',
+      '.principle-list article', '.member-page-head', '.member-panel', '.member-stream article',
+      '.member-feed-rail > *', '.showcase-member-grid > *', '.ecosystem-route'
+    ].join(',')
+    const frame = window.requestAnimationFrame(() => {
+      const nodes = [...document.querySelectorAll(selector)]
+      nodes.forEach((node, index) => {
+        node.classList.add('reveal-item')
+        node.style.setProperty('--reveal-order', index % 4)
+      })
+      document.documentElement.classList.add('motion-ready')
+      const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+          if (!entry.isIntersecting) return
+          entry.target.classList.add('is-visible')
+          observer.unobserve(entry.target)
+        })
+      }, { threshold:.06, rootMargin:'0px 0px 12% 0px' })
+      nodes.forEach(node => observer.observe(node))
+      window.__redbellyRevealObserver = observer
+    })
+    return () => {
+      window.cancelAnimationFrame(frame)
+      window.__redbellyRevealObserver?.disconnect()
+      delete window.__redbellyRevealObserver
+      document.documentElement.classList.remove('motion-ready')
+    }
+  }, [location.pathname])
+
   return <div className="site-shell">
     <header className={`site-header ${memberMode ? 'site-header--member' : 'site-header--public'}`}>
       <div className="container header-inner">
@@ -61,10 +97,10 @@ export function WalletModal({ open, onClose, wallet, onConnect, onDemo, onSwitch
   }, [open, onClose])
   if (!open) return null
   return <div className="modal-wrap" role="dialog" aria-modal="true" aria-label="Connect wallet"><button className="modal-backdrop" onClick={onClose} aria-label="Close" /><div className="modal" ref={panelRef}>
-    <div className="modal-head"><div className="icon-box icon-box--red"><Wallet size={20} /></div><button className="icon-button" onClick={onClose}><X size={19} /></button></div>
+    <div className="modal-head modal-head--end"><button className="icon-button" onClick={onClose}><X size={19} /></button></div>
     {!wallet.address ? <>
       <h2>Enter the member space</h2><p>Connect your wallet to unlock your dashboard, tasks, notifications and governance actions.</p>
-      <button className="wallet-option" onClick={onConnect}><span className="wallet-symbol">◇</span><span><b>Browser wallet</b><small>MetaMask, Rabby or another injected wallet</small></span><ArrowRight size={18} /></button>
+      <button className="wallet-option" onClick={onConnect}><span className="wallet-symbol wallet-symbol--primary"><Wallet size={18}/></span><span><b>Browser wallet</b><small>MetaMask, Rabby or another injected wallet</small></span><ArrowRight size={18} /></button>
       <button className="wallet-option" onClick={onDemo}><span className="wallet-symbol wallet-symbol--demo"><LayoutDashboard size={18} /></span><span><b>Preview member experience</b><small>Explore safely with a demo wallet</small></span><ArrowRight size={18} /></button>
       <p className="legal-note">By connecting, you agree to the DAO participation terms. We never request your private key.</p>
     </> : <>
@@ -84,6 +120,6 @@ export function JoinModal({ open, onClose, wallet, onConnect, onDemo, knownMembe
   const submit = event => { event.preventDefault(); onRegister(form) }
   return <div className="modal-wrap" role="dialog" aria-modal="true" aria-label="Join the DAO"><button className="modal-backdrop" onClick={close} aria-label="Close"/><div className="modal modal--join onboarding-modal">
     <div className="modal-head"><span className="eyebrow">Join Redbelly DAO</span><button className="icon-button" onClick={close}><X size={19}/></button></div>
-    {!wallet.address ? <><div className="onboarding-step"><span>01</span><small>Connect wallet</small><i/><span>02</span><small>Member details</small></div><h2>Start with your wallet.</h2><p>Your wallet identifies your DAO membership. Existing members go straight in; new members complete one short registration.</p><button className="wallet-option" onClick={onConnect}><span className="wallet-symbol">◇</span><span><b>Connect browser wallet</b><small>MetaMask, Rabby or another injected wallet</small></span><ArrowRight size={18}/></button><button className="wallet-option" onClick={onDemo}><span className="wallet-symbol wallet-symbol--demo"><LayoutDashboard size={18}/></span><span><b>Preview member experience</b><small>Use the registered demo member</small></span><ArrowRight size={18}/></button></> : knownMember ? <><div className="success-mark"><Check size={26}/></div><h2>Welcome back.</h2><p>This wallet is already registered with the DAO.</p><div className="registered-wallet mono">{wallet.address}</div><button className="button button--primary button--wide" onClick={() => { close(); onEnter() }}>Enter DAO member space <ArrowRight size={17}/></button></> : <><div className="onboarding-step"><span className="is-done"><Check size={12}/></span><small>Wallet connected</small><i/><span>02</span><small>Member details</small></div><h2>Complete your member profile.</h2><p>This is registration, not an application. It helps the DAO understand who is participating.</p><form className="onboarding-form" onSubmit={submit}><label><span>Name</span><input name="name" value={form.name} onChange={update} placeholder="Your name" required/></label><label><span>Email</span><input name="email" type="email" value={form.email} onChange={update} placeholder="you@example.com" required/></label><label><span>Region</span><input name="region" value={form.region} onChange={update} placeholder="Country or region" required/></label><label><span>Primary interest</span><select name="interest" value={form.interest} onChange={update}><option>Community initiatives</option><option>Governance</option><option>Developer activity</option><option>Education & resources</option><option>Taskboard opportunities</option></select></label><button className="button button--primary button--wide" type="submit">Register and enter DAO <ArrowRight size={17}/></button></form></>}
+    {!wallet.address ? <><div className="onboarding-step"><span>01</span><small>Connect wallet</small><i/><span>02</span><small>Member details</small></div><h2>Start with your wallet.</h2><p>Your wallet identifies your DAO membership. Existing members go straight in; new members complete one short registration.</p><button className="wallet-option" onClick={onConnect}><span className="wallet-symbol wallet-symbol--primary"><Wallet size={18}/></span><span><b>Connect browser wallet</b><small>MetaMask, Rabby or another injected wallet</small></span><ArrowRight size={18}/></button><button className="wallet-option" onClick={onDemo}><span className="wallet-symbol wallet-symbol--demo"><LayoutDashboard size={18}/></span><span><b>Preview member experience</b><small>Use the registered demo member</small></span><ArrowRight size={18}/></button></> : knownMember ? <><div className="success-mark"><Check size={26}/></div><h2>Welcome back.</h2><p>This wallet is already registered with the DAO.</p><div className="registered-wallet mono">{wallet.address}</div><button className="button button--primary button--wide" onClick={() => { close(); onEnter() }}>Enter DAO member space <ArrowRight size={17}/></button></> : <><div className="onboarding-step"><span className="is-done"><Check size={12}/></span><small>Wallet connected</small><i/><span>02</span><small>Member details</small></div><h2>Complete your member profile.</h2><p>This is registration, not an application. It helps the DAO understand who is participating.</p><form className="onboarding-form" onSubmit={submit}><label><span>Name</span><input name="name" value={form.name} onChange={update} placeholder="Your name" required/></label><label><span>Email</span><input name="email" type="email" value={form.email} onChange={update} placeholder="you@example.com" required/></label><label><span>Region</span><input name="region" value={form.region} onChange={update} placeholder="Country or region" required/></label><label><span>Primary interest</span><select name="interest" value={form.interest} onChange={update}><option>Community initiatives</option><option>Governance</option><option>Developer activity</option><option>Education & resources</option><option>Taskboard opportunities</option></select></label><button className="button button--primary button--wide" type="submit">Register and enter DAO <ArrowRight size={17}/></button></form></>}
   </div></div>
 }
