@@ -28,14 +28,14 @@ export function SiteLayout({ children, theme, onToggleTheme, wallet, onConnect, 
     <header className={`site-header ${memberMode ? 'site-header--member' : 'site-header--public'}`}>
       <div className="container header-inner">
         <Brand />
-        {memberMode ? <span className="member-space-label">DAO member space</span> : <nav className="public-nav" aria-label="Primary navigation"><a href="/#about">About DAO</a><a href="/#how-it-works">How it works</a><NavLink to="/digest">DAO Digest</NavLink><NavLink to="/resources">Resources</NavLink></nav>}
+        {memberMode ? <span className="member-space-label">DAO member space</span> : <nav className="public-nav" aria-label="Primary navigation"><NavLink to="/about">About DAO</NavLink><NavLink to="/governance">Governance</NavLink><NavLink to="/digest">DAO Digest</NavLink><NavLink to="/resources">Resources</NavLink></nav>}
         <div className="header-actions">
           <ThemeToggle theme={theme} onToggle={onToggleTheme} />
           <WalletControl wallet={wallet} onConnect={onConnect} onDisconnect={onDisconnect}/>
           {!memberMode && <button className="public-menu-trigger icon-button" onClick={() => setPublicMenuOpen(value => !value)} aria-expanded={publicMenuOpen} aria-label="Open navigation">{publicMenuOpen ? <X size={18}/> : <Menu size={18}/>}</button>}
         </div>
       </div>
-      {!memberMode && publicMenuOpen && <div className="public-mobile-menu"><nav aria-label="Mobile navigation"><a href="/#about">About DAO <ArrowRight size={15}/></a><a href="/#how-it-works">How it works <ArrowRight size={15}/></a><Link to="/digest" onClick={() => setPublicMenuOpen(false)}>DAO Digest <ArrowRight size={15}/></Link><Link to="/resources" onClick={() => setPublicMenuOpen(false)}>Resources <ArrowRight size={15}/></Link></nav><button className="button button--primary" onClick={() => { setPublicMenuOpen(false); onJoin() }}>Join Redbelly DAO <ArrowRight size={16}/></button></div>}
+      {!memberMode && publicMenuOpen && <div className="public-mobile-menu"><nav aria-label="Mobile navigation"><Link to="/about" onClick={() => setPublicMenuOpen(false)}>About DAO <ArrowRight size={15}/></Link><Link to="/governance" onClick={() => setPublicMenuOpen(false)}>Governance <ArrowRight size={15}/></Link><Link to="/digest" onClick={() => setPublicMenuOpen(false)}>DAO Digest <ArrowRight size={15}/></Link><Link to="/resources" onClick={() => setPublicMenuOpen(false)}>Resources <ArrowRight size={15}/></Link></nav><button className="button button--primary" onClick={() => { setPublicMenuOpen(false); onJoin() }}>Join Redbelly DAO <ArrowRight size={16}/></button></div>}
     </header>
     <main>{children}</main>
     {!memberMode && <Footer onJoin={onJoin} />}
@@ -45,8 +45,7 @@ export function SiteLayout({ children, theme, onToggleTheme, wallet, onConnect, 
 function Footer({ onJoin }) {
   return <footer className="site-footer">
     <div className="container">
-      <div className="footer-mast"><div><span className="eyebrow eyebrow--light">Redbelly Community DAO</span><h2>Stakeholders shaping<br/>what comes next.</h2></div><button className="button button--light" onClick={onJoin}>Enter the DAO <ArrowRight size={17}/></button></div>
-      <div className="footer-directory"><div className="footer-brand"><Brand /><p>The community stakeholder layer supporting the Redbelly blockchain ecosystem.</p></div><div><span>Explore</span><Link to="/resources">Resources</Link><Link to="/digest">DAO Digest</Link><Link to="/developers">Developers</Link></div><div><span>Member space</span><Link to="/app/voting">Voting</Link><Link to="/app/proposals">Proposals</Link><Link to="/app/taskboard">Taskboard</Link></div><div><span>Official channels</span><a href="https://discord.com/invite/redbelly" target="_blank" rel="noreferrer">Discord <ExternalLink size={12}/></a><a href="https://x.com/redbellynetwork" target="_blank" rel="noreferrer">X <ExternalLink size={12}/></a><a href="https://github.com/redbellynetwork" target="_blank" rel="noreferrer">GitHub <GitBranch size={12}/></a></div></div>
+      <div className="footer-compact"><div className="footer-brand"><Brand /><p>The community stakeholder layer supporting the Redbelly blockchain ecosystem.</p><button className="text-link" onClick={onJoin}>Enter the DAO <ArrowRight size={14}/></button></div><div><span>Explore</span><Link to="/about">About DAO</Link><Link to="/digest">DAO Digest</Link><Link to="/resources">Resources</Link></div><div><span>Participate</span><Link to="/governance">Governance</Link><Link to="/taskboard">Taskboard</Link><Link to="/treasury">Treasury</Link></div><div><span>Official</span><a href="https://discord.com/invite/redbelly" target="_blank" rel="noreferrer">Discord <ExternalLink size={12}/></a><a href="https://x.com/redbellynetwork" target="_blank" rel="noreferrer">X <ExternalLink size={12}/></a><a href="https://github.com/redbellynetwork" target="_blank" rel="noreferrer">GitHub <GitBranch size={12}/></a></div></div>
       <div className="footer-bottom"><span>© 2026 Redbelly Community DAO</span><div><Link to="/resources">Privacy</Link><Link to="/resources">Terms</Link><span>Built in the open</span></div></div>
     </div>
   </footer>
