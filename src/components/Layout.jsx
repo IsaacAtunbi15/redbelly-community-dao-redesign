@@ -30,7 +30,6 @@ export function SiteLayout({ children, theme, onToggleTheme, wallet, onConnect, 
         {memberMode ? <span className="member-space-label">DAO member space</span> : <nav className="public-nav" aria-label="Primary navigation"><NavLink to="/resources">Resources</NavLink></nav>}
         <div className="header-actions">
           <ThemeToggle theme={theme} onToggle={onToggleTheme} />
-          {!memberMode && <button className="button button--ghost join-desktop" onClick={onJoin}>Join DAO</button>}
           <WalletControl wallet={wallet} onConnect={onConnect} onDisconnect={onDisconnect}/>
         </div>
       </div>
