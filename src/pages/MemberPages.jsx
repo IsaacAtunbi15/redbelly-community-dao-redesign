@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { ArrowRight, Bell, BookOpen, CheckCircle2, ChevronRight, CircleUserRound, Code2, ExternalLink, FileText, LayoutDashboard, ListChecks, Menu, PanelLeftClose, Pin, Settings, Sparkles, Vote, WalletCards, X } from 'lucide-react'
+import { ArrowRight, Bell, BookOpen, CheckCircle2, ChevronRight, Code2, ExternalLink, FileText, LayoutDashboard, ListChecks, Menu, PanelLeftClose, Pin, Settings, Sparkles, Vote, WalletCards, X } from 'lucide-react'
 import { Link, NavLink, Navigate } from 'react-router-dom'
 import { Eyebrow, StatusChip } from '../components/UI'
 import { ResourcesPage, TaskboardPage, TreasuryPage } from './PublicPages'
@@ -33,17 +33,16 @@ export function MemberLayout({ wallet, registered, children }) {
 }
 
 export function DashboardPage({ wallet, registered }) {
-  return <MemberLayout wallet={wallet} registered={registered}><div className="member-page member-dashboard"><section className="member-welcome"><div><Eyebrow>Your DAO overview</Eyebrow><h1>Welcome back.</h1><p>Your personal context first, followed by the activity you may have missed.</p></div><div className="member-account-summary"><span><i/> Wallet connected</span><strong className="mono">{wallet.address.slice(0,8)}…{wallet.address.slice(-6)}</strong><small>Member registration complete</small></div></section>
-    <section className="personal-overview"><article><span>Participation</span><h2>Your participation summary</h2><p>Member-specific contribution and governance activity appears here.</p></article><article><span>For you</span><h2>Items needing your attention</h2><p>Relevant votes, tasks and account actions appear here.</p></article></section>
-    <div className="feed-heading"><div><Eyebrow>DAO feed</Eyebrow><h2>What happened while you were away.</h2></div><span>Updated from connected DAO sources</span></div>
-    <section className="dao-feed-grid">
-      <article className="feed-block feed-block--wide"><header><span>Snapshot</span><Vote/></header><h3>Current voting activity</h3><p>Snapshot proposals and active votes go here.</p><Link to="/app/voting">Open voting <ArrowRight/></Link></article>
-      <article className="feed-block"><header><span>Decisions</span><CheckCircle2/></header><h3>Recently approved</h3><p>Latest approved proposals go here.</p><Link to="/app/voting">View decisions <ArrowRight/></Link></article>
-      <article className="feed-block"><header><span>Treasury</span><WalletCards/></header><h3>Budget at a glance</h3><p>Treasury summary and budget status go here.</p><Link to="/app/treasury">Open treasury <ArrowRight/></Link></article>
-      <article className="feed-block"><header><span>Community</span><CircleUserRound/></header><h3>Across the community</h3><p>Recent community updates and announcements go here.</p></article>
-      <article className="feed-block"><header><span>Taskboard</span><ListChecks/></header><h3>Contribution activity</h3><p>Current Taskboard activity goes here.</p><Link to="/app/taskboard">Open Taskboard <ArrowRight/></Link></article>
-      <article className="feed-block feed-block--digest"><span>DAO DIGEST · 04</span><h3>One clear place to catch up.</h3><p>The editorial summary of proposals, projects and community activity.</p><Link to="/digest">Read the Digest <ArrowRight/></Link></article>
-    </section>
+  return <MemberLayout wallet={wallet} registered={registered}><div className="member-page member-dashboard"><section className="member-welcome member-welcome--editorial"><div><Eyebrow>Member overview</Eyebrow><h1>The DAO,<br/><span>without the noise.</span></h1><p>Your personal context and the state of the community in one deliberate view.</p></div><div className="member-account-summary"><span><i/> Registered member</span><strong className="mono">{wallet.address.slice(0,8)}…{wallet.address.slice(-6)}</strong><small>{wallet.networkName || 'Redbelly network'} · Wallet connected</small></div></section>
+    <section className="member-priority"><div><span>For you</span><h2>Your next action belongs here.</h2><p>Relevant votes, assigned work and account notices will appear in this focused area.</p></div><div><span>Participation</span><h2>Your contribution record belongs here.</h2><p>Member-specific governance and contribution activity will appear after integrations are connected.</p></div></section>
+    <div className="feed-heading feed-heading--editorial"><div><Eyebrow>DAO activity</Eyebrow><h2>What changed while you were away.</h2></div><span>One feed · Connected DAO sources</span></div>
+    <section className="member-stream-layout"><div className="member-stream">
+      <article><span>01</span><div><small>Snapshot</small><h3>Current voting activity</h3><p>Active proposals, voting windows and your participation status go here.</p></div><Link to="/app/voting">Open voting <ArrowRight/></Link></article>
+      <article><span>02</span><div><small>Decisions</small><h3>Recently approved proposals</h3><p>The latest decisions and their implementation status go here.</p></div><Link to="/app/voting">View decisions <ArrowRight/></Link></article>
+      <article><span>03</span><div><small>Treasury</small><h3>Budget and treasury movement</h3><p>Current RBNT position, approved budgets and recent activity go here.</p></div><Link to="/app/treasury">Open treasury <ArrowRight/></Link></article>
+      <article><span>04</span><div><small>Community</small><h3>Updates across the DAO</h3><p>Working-group notes, announcements and community activity go here.</p></div><Link to="/app/showcase">View community <ArrowRight/></Link></article>
+      <article><span>05</span><div><small>Taskboard</small><h3>Contribution activity</h3><p>New opportunities, active tasks and completed community work go here.</p></div><Link to="/app/taskboard">Open Taskboard <ArrowRight/></Link></article>
+    </div><aside className="member-feed-rail"><div className="member-digest-card"><span>DAO DIGEST · 04</span><h3>Missed a week?<br/>Start here.</h3><p>The editorial summary of proposals, projects and community activity.</p><Link to="/digest">Read the Digest <ArrowRight/></Link></div><div className="member-identity-card"><span>Membership</span><strong>Registration complete</strong><p>Your wallet is recognised in this local prototype.</p><Link to="/app/profile">View member profile <ArrowRight/></Link></div></aside></section>
   </div></MemberLayout>
 }
 

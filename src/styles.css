@@ -900,3 +900,163 @@ body { overflow-x: hidden; }
   .onboarding-step { grid-template-columns:25px auto 1fr 25px; }
   .onboarding-step small:last-child { display:none; }
 }
+
+/* Competitive refinement: one connected public story, not a stack of dashboard cards. */
+html,body,#root { max-width:100%; overflow-x:clip; }
+
+.dao-foundation { background:var(--surface); }
+.dao-foundation__grid { display:grid; grid-template-columns:minmax(0,.88fr) minmax(0,1.12fr); gap:clamp(70px,10vw,155px); align-items:start; }
+.dao-foundation__lead { position:sticky; top:130px; }
+.dao-foundation__lead h2 { max-width:600px; margin:20px 0 22px; font-size:clamp(3rem,4.5vw,5.15rem); line-height:.98; letter-spacing:-.055em; }
+.dao-foundation__lead > p { max-width:540px; margin-bottom:30px; font-size:.96rem; }
+.dao-foundation__roles { border-top:1px solid var(--border-strong); }
+.dao-foundation__roles article { min-height:210px; padding:34px 0; display:grid; grid-template-columns:170px 1fr; grid-template-rows:auto 1fr; gap:11px 28px; align-content:center; border-bottom:1px solid var(--border); }
+.dao-foundation__roles article > span { grid-row:1/3; color:var(--red); font-size:.64rem; font-weight:600; letter-spacing:.1em; text-transform:uppercase; }
+.dao-foundation__roles h3 { margin:0; font-size:1.55rem; }
+.dao-foundation__roles p { max-width:470px; margin:0; font-size:.82rem; }
+
+.dao-motion { color:white; background:var(--night); }
+.dao-motion .eyebrow { color:#ff9ba1; }
+.dao-motion__head { display:grid; grid-template-columns:1.15fr .55fr; gap:80px; align-items:end; }
+.dao-motion__head h2 { max-width:720px; margin:20px 0 0; color:white; font-size:clamp(3.2rem,5vw,5.8rem); line-height:.94; letter-spacing:-.06em; }
+.dao-motion__head > p { max-width:430px; margin:0 0 5px; color:#aeb8bc; }
+.dao-motion__track { position:relative; margin:90px 0 0; padding:0; display:grid; grid-template-columns:repeat(4,1fr); list-style:none; border-top:1px solid #43545d; }
+.dao-motion__track::before { content:''; position:absolute; left:0; top:-2px; width:75%; height:3px; background:var(--red); }
+.dao-motion__track li { position:relative; min-height:270px; padding:34px 34px 30px 0; border-right:1px solid rgba(255,255,255,.12); }
+.dao-motion__track li + li { padding-left:34px; }
+.dao-motion__track li:last-child { border-right:0; }
+.dao-motion__track li::before { content:''; position:absolute; width:9px; height:9px; top:-5px; left:-1px; border-radius:50%; background:var(--red); box-shadow:0 0 0 6px #2f383e; }
+.dao-motion__track span { color:#ff969c; font-size:.63rem; letter-spacing:.1em; }
+.dao-motion__track strong { display:block; margin:62px 0 12px; color:white; font-size:1.45rem; font-weight:500; }
+.dao-motion__track p { max-width:220px; margin:0; color:#93a2a9; font-size:.75rem; }
+.dao-motion__foot { min-height:92px; padding-top:28px; display:grid; grid-template-columns:150px 1fr auto; gap:28px; align-items:start; border-top:1px solid #43545d; }
+.dao-motion__foot > span { color:#ff969c; font-size:.63rem; font-weight:600; letter-spacing:.1em; text-transform:uppercase; }
+.dao-motion__foot p { max-width:650px; margin:0; color:#aeb8bc; font-size:.76rem; }
+.dao-motion__foot .text-link { color:white; }
+
+.dao-entry { background:var(--bg); }
+.dao-entry__head { max-width:820px; margin-bottom:60px; }
+.dao-entry__head h2 { margin:20px 0 18px; font-size:clamp(3rem,4.5vw,5rem); line-height:.98; letter-spacing:-.055em; }
+.dao-entry__head p { max-width:630px; margin:0; }
+.dao-entry__grid { display:grid; grid-template-columns:repeat(3,1fr); border:1px solid var(--border); background:var(--surface); }
+.dao-entry__grid article { min-height:390px; padding:38px; display:flex; flex-direction:column; border-right:1px solid var(--border); }
+.dao-entry__grid article:last-child { border-right:0; }
+.dao-entry__grid article > span { color:var(--red); font-size:.62rem; font-weight:600; letter-spacing:.09em; text-transform:uppercase; }
+.dao-entry__grid h3 { max-width:310px; margin:90px 0 15px; font-size:1.9rem; line-height:1.06; }
+.dao-entry__grid p { max-width:350px; margin:0 0 30px; font-size:.8rem; }
+.dao-entry__grid .text-link { margin-top:auto; align-self:flex-start; padding:0; border:0; color:var(--ink); background:transparent; }
+.dao-entry__feature { color:white; background:var(--slate); }
+.dao-entry__feature p { color:#aeb8bc; }
+.dao-entry__grid .dao-entry__feature .text-link { color:white; }
+:root[data-theme='dark'] .dao-foundation { background:var(--bg); }
+:root[data-theme='dark'] .dao-entry__feature { background:var(--red); }
+:root[data-theme='dark'] .dao-entry__feature > span { color:#ffe0e2; }
+:root[data-theme='dark'] .dao-entry__feature p { color:#ffe7e8; }
+
+/* Member home: a purposeful activity ledger with one editorial side rail. */
+.member-welcome--editorial { min-height:350px; position:relative; overflow:hidden; align-items:flex-end; }
+.member-welcome--editorial::after { content:'DAO'; position:absolute; right:-.02em; top:-.28em; color:rgba(255,255,255,.035); font-size:18rem; font-weight:700; letter-spacing:-.1em; }
+.member-welcome--editorial > * { position:relative; z-index:1; }
+.member-welcome--editorial h1 { margin:20px 0 16px; font-size:clamp(3.3rem,5vw,5.5rem); line-height:.85; letter-spacing:-.06em; }
+.member-welcome--editorial h1 span { color:#ff858c; }
+.member-priority { display:grid; grid-template-columns:1fr 1fr; border:1px solid var(--border); border-top:0; background:var(--surface); }
+.member-priority > div { min-height:190px; padding:32px 38px; }
+.member-priority > div + div { border-left:1px solid var(--border); }
+.member-priority span { color:var(--red); font-size:.6rem; font-weight:600; letter-spacing:.09em; text-transform:uppercase; }
+.member-priority h2 { margin:42px 0 8px; font-size:1.15rem; }
+.member-priority p { max-width:500px; margin:0; font-size:.7rem; }
+.feed-heading--editorial { margin-top:95px; }
+.feed-heading--editorial h2 { font-size:clamp(2.5rem,3.8vw,4.3rem); line-height:1; letter-spacing:-.05em; }
+.member-stream-layout { display:grid; grid-template-columns:minmax(0,1.55fr) minmax(280px,.62fr); gap:22px; align-items:start; }
+.member-stream { border-top:1px solid var(--border-strong); }
+.member-stream article { min-height:185px; padding:30px 0; display:grid; grid-template-columns:48px 1fr auto; gap:22px; align-items:center; border-bottom:1px solid var(--border); }
+.member-stream article > span { align-self:start; color:var(--red); font-size:.6rem; letter-spacing:.08em; }
+.member-stream small { color:var(--red); font-size:.58rem; font-weight:600; letter-spacing:.09em; text-transform:uppercase; }
+.member-stream h3 { margin:13px 0 7px; font-size:1.35rem; }
+.member-stream p { max-width:580px; margin:0; font-size:.72rem; }
+.member-stream a { display:flex; align-items:center; gap:8px; font-size:.67rem; font-weight:700; white-space:nowrap; }
+.member-stream a svg { width:14px; }
+.member-feed-rail { position:sticky; top:100px; display:flex; flex-direction:column; gap:14px; }
+.member-digest-card,.member-identity-card { padding:34px; border-radius:12px; }
+.member-digest-card { min-height:390px; display:flex; flex-direction:column; color:white; background:var(--red); }
+.member-digest-card > span,.member-identity-card > span { color:#ffe0e2; font-size:.6rem; font-weight:600; letter-spacing:.09em; text-transform:uppercase; }
+.member-digest-card h3 { margin:auto 0 13px; font-size:2.4rem; line-height:.94; }
+.member-digest-card p { color:#ffe5e7; font-size:.72rem; }
+.member-digest-card a { display:flex; align-items:center; gap:8px; color:white; font-size:.68rem; font-weight:700; }
+.member-digest-card a svg,.member-identity-card a svg { width:14px; }
+.member-identity-card { border:1px solid var(--border); background:var(--surface); }
+.member-identity-card > span { color:var(--red); }
+.member-identity-card strong { display:block; margin:28px 0 8px; }
+.member-identity-card p { margin:0 0 20px; font-size:.68rem; }
+.member-identity-card a { display:flex; align-items:center; gap:8px; font-size:.66rem; font-weight:700; }
+
+@media (max-width:1050px) {
+  .dao-foundation__grid { grid-template-columns:1fr; gap:75px; }
+  .dao-foundation__lead { position:static; }
+  .dao-foundation__roles article { grid-template-columns:150px 1fr; }
+  .dao-motion__head { grid-template-columns:1fr; gap:25px; }
+  .dao-motion__track { grid-template-columns:1fr 1fr; }
+  .dao-motion__track::before { display:none; }
+  .dao-motion__track li { min-height:230px; border-top:3px solid var(--red); }
+  .dao-motion__track li:nth-child(2) { border-right:0; }
+  .dao-motion__track li::before { display:none; }
+  .dao-motion__track strong { margin-top:45px; }
+  .dao-motion__foot { grid-template-columns:120px 1fr; }
+  .dao-motion__foot .text-link { grid-column:2; }
+  .dao-entry__grid { grid-template-columns:1fr; }
+  .dao-entry__grid article { min-height:300px; border-right:0; border-bottom:1px solid var(--border); }
+  .dao-entry__grid h3 { margin-top:55px; }
+  .member-stream-layout { grid-template-columns:1fr; }
+  .member-feed-rail { position:static; display:grid; grid-template-columns:1fr 1fr; }
+}
+
+@media (max-width:760px) {
+  .container { width:min(calc(100% - 28px),var(--container)); }
+  .section { padding:92px 0; }
+  .site-header--public .brand,.site-header--member .brand { flex:0 0 82px; min-width:82px; margin-right:0; }
+  .site-header--public .brand-logo-wrap,.site-header--member .brand-logo-wrap { width:78px; justify-content:flex-start; }
+  .site-header--public .brand-logo,.site-header--member .brand-logo { width:68px; }
+  .public-nav { margin-left:auto; }
+  .header-actions { margin-left:9px; gap:5px; }
+  .header-actions .icon-button { width:36px; height:36px; }
+  .header-actions .wallet-button { min-height:39px; padding:0 12px; }
+  .dao-hero__copy h1 { font-size:clamp(2.75rem,12vw,3.85rem); line-height:.96; }
+  .dao-hero__copy .hero-actions { flex-direction:column; }
+  .dao-hero__copy .hero-actions .button { width:100%; }
+  .dao-foundation__lead h2,.dao-entry__head h2 { font-size:clamp(2.55rem,11vw,3.4rem); }
+  .dao-foundation__roles article { min-height:0; padding:32px 0; grid-template-columns:1fr; grid-template-rows:auto; gap:13px; }
+  .dao-foundation__roles article > span { grid-row:auto; }
+  .dao-motion__head h2 { font-size:clamp(2.75rem,12vw,3.7rem); }
+  .dao-motion__track { margin-top:62px; grid-template-columns:1fr; }
+  .dao-motion__track li,.dao-motion__track li + li { min-height:210px; padding:28px 0; border-right:0; }
+  .dao-motion__track strong { margin-top:42px; }
+  .dao-motion__foot { grid-template-columns:1fr; gap:13px; }
+  .dao-motion__foot .text-link { grid-column:auto; margin-top:10px; }
+  .dao-entry__head { margin-bottom:42px; }
+  .dao-entry__grid article { min-height:330px; padding:30px 25px; }
+  .digest-preview { padding-bottom:92px; }
+  .member-welcome--editorial { min-height:430px; }
+  .member-welcome--editorial h1 { font-size:clamp(3rem,14vw,4rem); }
+  .member-priority { grid-template-columns:1fr; border-top:1px solid var(--border); margin-top:14px; }
+  .member-priority > div { min-height:180px; padding:28px 24px; }
+  .member-priority > div + div { border-left:0; border-top:1px solid var(--border); }
+  .feed-heading--editorial { margin-top:75px; }
+  .member-stream article { min-height:0; padding:28px 0; grid-template-columns:30px 1fr; gap:14px; }
+  .member-stream article > a { grid-column:2; margin-top:5px; }
+  .member-feed-rail { display:grid; grid-template-columns:1fr; }
+  .member-digest-card { min-height:350px; }
+}
+
+@media (max-width:430px) {
+  .header-inner { gap:5px; }
+  .public-nav a { font-size:.64rem; }
+  .dao-hero__inner { padding-top:65px; }
+  .dao-hero__copy h1 { font-size:2.5rem; overflow-wrap:anywhere; }
+  .dao-hero__copy > p,.dao-hero__statement p { overflow-wrap:anywhere; }
+  .dao-poster__words span { font-size:clamp(2.8rem,14.5vw,3.8rem); }
+  .dao-poster__words span:nth-child(2) { margin-left:5%; }
+  .dao-poster__words span:nth-child(3) { margin-left:18%; }
+  .dao-foundation__lead h2,.dao-entry__head h2 { font-size:2.25rem; overflow-wrap:anywhere; }
+  .dao-motion__head h2 { font-size:2.55rem; overflow-wrap:anywhere; }
+  .official-links { gap:17px; }
+}
