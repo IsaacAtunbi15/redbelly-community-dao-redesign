@@ -1,64 +1,65 @@
-import { ArrowRight, BookOpen, CalendarDays, ExternalLink } from 'lucide-react'
+import { ArrowDownRight, ArrowRight, BookOpen, CalendarDays, ExternalLink } from 'lucide-react'
 import { Link } from 'react-router-dom'
 import { Eyebrow, TextLink } from '../components/UI'
 
 export default function Home({ onJoin }) {
   return <>
-    <section className="dao-hero dao-hero--simple">
-      <div className="container dao-hero__inner">
-        <div className="dao-hero__copy">
+    <section className="rb-hero">
+      <div className="container rb-hero__grid">
+        <div className="rb-hero__copy">
           <Eyebrow>Redbelly Community DAO</Eyebrow>
-          <h1>A community with a stake in <span>what comes next.</span></h1>
-          <p>Redbelly DAO gives community members a clear way to help shape, support and strengthen the Redbelly blockchain ecosystem.</p>
-          <div className="hero-actions"><button className="button button--primary" onClick={onJoin}>Join DAO <ArrowRight size={17}/></button><Link className="button button--secondary" to="/resources">Explore resources</Link></div>
-          <div className="dao-hero__statement"><span>In one line</span><p>Community stakeholders turn ideas, expertise and participation into accountable ecosystem impact.</p></div>
+          <h1>The people around the network, <span>moving it forward.</span></h1>
+          <p>A decentralized organization where Redbelly stakeholders turn community knowledge into shared decisions, useful initiatives and accountable impact.</p>
+          <div className="hero-actions"><button className="button button--primary" onClick={onJoin}>Join the DAO <ArrowRight size={17}/></button><a className="button button--dark-outline" href="#how-it-works">See how it works <ArrowDownRight size={17}/></a></div>
+          <div className="rb-hero__note"><span>Community-owned context</span><span>Transparent decisions</span><span>Practical participation</span></div>
         </div>
-        <div className="dao-hero__visual" aria-label="Redbelly DAO stakeholder layer">
-          <div className="dao-poster__top"><span>The stakeholder layer</span><small>Open · Community-led</small></div>
-          <div className="dao-poster__body"><img src="/assets/Redbelly-Community-DAO logo-dark.png" alt=""/><div className="dao-poster__words"><span>Shape</span><span>Support</span><span>Build</span></div></div>
-          <div className="dao-poster__foot"><strong>Participation with purpose.</strong><span>Redbelly DAO · 2026</span></div>
+
+        <div className="rb-field" aria-label="From community voice to ecosystem impact">
+          <div className="rb-field__head"><span>Stakeholder interface</span><small>RED / DAO · 01</small></div>
+          <div className="rb-field__brand"><img src="/assets/Redbelly-Community-DAO logo-dark.png" alt=""/><span>VOICE</span></div>
+          <div className="rb-field__sequence"><div><small>01</small><strong>Listen</strong></div><div><small>02</small><strong>Decide</strong></div><div><small>03</small><strong>Deliver</strong></div></div>
+          <div className="rb-field__foot"><strong>Participation becomes progress.</strong><span>Open · Community-led</span></div>
         </div>
       </div>
+      <div className="container rb-hero__rail"><span>Decentralized Autonomous Organization</span><p>One public home. One wallet-gated member space. One clear view of the DAO.</p><a href="#about" aria-label="Continue to about the DAO"><ArrowDownRight size={18}/></a></div>
     </section>
 
-    <section className="section dao-foundation"><div className="container dao-foundation__grid">
-      <div className="dao-foundation__lead"><Eyebrow>The relationship</Eyebrow><h2>The blockchain is the infrastructure. The DAO is its stakeholder layer.</h2><p>It gives the people around Redbelly a clear structure for turning community knowledge into decisions, initiatives and useful work.</p><TextLink to="/resources">Understand the DAO</TextLink></div>
-      <div className="dao-foundation__roles">
-        <article><span>Community voice</span><h3>Surface what matters.</h3><p>Members discuss needs, share context and identify opportunities across the ecosystem.</p></article>
-        <article><span>Collective governance</span><h3>Make decisions in the open.</h3><p>Ideas become proposals, eligible members vote through Snapshot, and outcomes remain visible.</p></article>
-        <article><span>Accountable delivery</span><h3>Turn decisions into impact.</h3><p>Working groups, contributors and community initiatives carry approved priorities forward.</p></article>
+    <section className="section rb-context" id="about"><div className="container">
+      <div className="rb-section-intro"><Eyebrow>What Redbelly DAO is</Eyebrow><h2>A stake is more than a token. It is a role in what comes next.</h2><p>The DAO is the community stakeholder layer around Redbelly. It creates a shared structure for understanding priorities, making decisions and supporting work that strengthens the wider blockchain ecosystem.</p></div>
+      <div className="rb-context__relationship">
+        <article><span>01 · The network</span><h3>Infrastructure for the real world.</h3><p>Redbelly provides the blockchain, technology and wider ecosystem where products and builders operate.</p><a href="https://redbelly.network" target="_blank" rel="noreferrer">Explore Redbelly Network <ExternalLink size={14}/></a></article>
+        <div className="rb-context__bridge"><span>Stakeholders connect both</span><i/></div>
+        <article className="rb-context__dao"><span>02 · The DAO</span><h3>Community direction and action.</h3><p>Members bring context, govern shared priorities and contribute to initiatives through one accountable organization.</p><Link to="/resources">Understand the DAO <ArrowRight size={14}/></Link></article>
       </div>
     </div></section>
 
-    <section className="section dao-motion"><div className="container">
-      <div className="dao-motion__head"><div><Eyebrow>How the DAO operates</Eyebrow><h2>One clear route from idea to impact.</h2></div><p>The process stays understandable at every stage, so participation never disappears into a black box.</p></div>
-      <ol className="dao-motion__track">
-        <li><span>01</span><strong>Discuss</strong><p>Test the need with the community.</p></li>
-        <li><span>02</span><strong>Propose</strong><p>Define the decision and expected outcome.</p></li>
-        <li><span>03</span><strong>Vote</strong><p>Eligible members decide through Snapshot.</p></li>
-        <li><span>04</span><strong>Deliver</strong><p>Act on the decision and report progress.</p></li>
+    <section className="section rb-loop" id="how-it-works"><div className="container rb-loop__grid">
+      <div className="rb-loop__lead"><Eyebrow>How it works</Eyebrow><h2>From a community signal to visible impact.</h2><p>Each stage has a purpose. Members always know where an idea sits, what happens next and where to find the outcome.</p><TextLink to="/resources">Read the governance guide</TextLink></div>
+      <ol className="rb-loop__steps">
+        <li><span>01</span><div><small>Community</small><h3>Surface the signal.</h3><p>Members raise needs, opportunities and useful context through open discussion.</p></div></li>
+        <li><span>02</span><div><small>Proposals</small><h3>Shape the decision.</h3><p>A clear proposal defines what is being decided, why it matters and what success means.</p></div></li>
+        <li><span>03</span><div><small>Snapshot</small><h3>Make the call.</h3><p>Eligible stakeholders vote, with the decision and participation record kept visible.</p></div></li>
+        <li><span>04</span><div><small>Initiatives & Taskboard</small><h3>Deliver in the open.</h3><p>Approved priorities become coordinated work, followed by progress and outcome reporting.</p></div></li>
       </ol>
-      <div className="dao-motion__foot"><span>Open by design</span><p>Discussion, decisions and delivery each have their own place—without making the public website feel like a dashboard.</p><TextLink to="/resources">Explore governance resources</TextLink></div>
     </div></section>
 
-    <section className="section dao-entry"><div className="container">
-      <div className="dao-entry__head"><Eyebrow>Participation</Eyebrow><h2>There is more than one way to have a stake.</h2><p>Start with the level of involvement that makes sense for you. The member space connects the rest.</p></div>
-      <div className="dao-entry__grid">
-        <article><span>01 · Stay informed</span><h3>Know what is happening.</h3><p>Catch up on proposals, projects and community activity through the DAO Digest.</p><TextLink to="/digest">Read the Digest</TextLink></article>
-        <article><span>02 · Help decide</span><h3>Bring context to governance.</h3><p>Connect as a member to follow Snapshot activity, proposals and recent decisions.</p><button className="text-link" onClick={onJoin}>Enter the member space <ArrowRight size={15}/></button></article>
-        <article className="dao-entry__feature"><span>03 · Make an impact</span><h3>Move useful work forward.</h3><p>Join initiatives, contribute through the Taskboard and showcase what the community builds.</p><button className="text-link" onClick={onJoin}>Join Redbelly DAO <ArrowRight size={15}/></button></article>
+    <section className="section rb-access"><div className="container">
+      <div className="rb-access__head"><div><Eyebrow>One DAO · Two layers</Eyebrow><h2>Simple outside.<br/>Powerful inside.</h2></div><p>The public website explains the DAO without overwhelming visitors. Connecting a registered wallet opens the richer member experience only when it is relevant.</p></div>
+      <div className="rb-access__grid">
+        <article className="rb-access__public"><div><span>Public website</span><small>No wallet required</small></div><h3>Understand the organization.</h3><ul><li>What the DAO is and how it operates</li><li>DAO Digest and official updates</li><li>Governance, leadership and resources</li><li>Official channels and onboarding</li></ul><Link className="text-link" to="/resources">Explore public resources <ArrowRight size={15}/></Link></article>
+        <article className="rb-access__member"><div><span>Member space</span><small>Wallet-gated</small></div><h3>Participate with context.</h3><ul><li>Personal overview and DAO activity feed</li><li>Snapshot voting and proposals</li><li>Treasury, Taskboard and opportunities</li><li>Community builds and notifications</li></ul><button className="button button--light" onClick={onJoin}>Connect and enter <ArrowRight size={16}/></button></article>
       </div>
     </div></section>
 
-    <section className="section digest-preview"><div className="container digest-card">
-      <div className="digest-visual"><span>DAO<br/>DIGEST</span><strong>04</strong><small>AUG · 2026</small></div>
-      <div className="digest-content"><Eyebrow>Current state of the DAO</Eyebrow><h2>Missed a week? Start here.</h2><p>A concise editorial summary of proposals, decisions, community activity, projects and important updates—without the Discord scroll.</p><div className="digest-meta"><span><CalendarDays size={15}/> August edition</span><span><BookOpen size={15}/> 6 min read</span></div><TextLink to="/digest">Read the DAO Digest</TextLink></div>
+    <section className="section rb-digest" id="digest"><div className="container rb-digest__frame">
+      <div className="rb-digest__cover"><div><span>RED<br/>BELLY</span><small>DAO DIGEST</small></div><strong>04</strong><span>AUG / 2026</span></div>
+      <div className="rb-digest__copy"><Eyebrow>The DAO, edited</Eyebrow><h2>Missed a week?<br/>Start here.</h2><p>One concise briefing for proposals, decisions, community activity, projects and the context behind them. Designed to replace information overload with a useful signal.</p><div className="digest-meta"><span><CalendarDays size={15}/> August edition</span><span><BookOpen size={15}/> 6 min read</span></div><TextLink to="/digest">Read the latest Digest</TextLink></div>
+      <div className="rb-digest__index"><span>Inside 04</span><ol><li><b>01</b>Governance</li><li><b>02</b>Community</li><li><b>03</b>Initiatives</li><li><b>04</b>Taskboard</li></ol></div>
     </div></section>
 
-    <section className="section public-close"><div className="container public-close__grid">
-      <div><Eyebrow>Go deeper</Eyebrow><h2>Details live in Resources.</h2><p>Find the DAO structure, leadership information, governance documents, proposal guidance and operational references in one place.</p><TextLink to="/resources">Open Resources</TextLink></div>
-      <div className="public-join"><span>Ready to participate?</span><h2>Join the DAO.</h2><p>Connect your wallet, complete a short registration if you are new, and enter the member space.</p><button className="button button--light" onClick={onJoin}>Start with your wallet <ArrowRight size={17}/></button></div>
-      <div className="official-links"><span>Official channels</span><a href="https://discord.com/invite/redbelly" target="_blank" rel="noreferrer">Discord <ExternalLink size={14}/></a><a href="https://x.com/redbellynetwork" target="_blank" rel="noreferrer">X / Twitter <ExternalLink size={14}/></a><a href="https://github.com/redbellynetwork" target="_blank" rel="noreferrer">GitHub <ExternalLink size={14}/></a></div>
+    <section className="rb-finale"><div className="container rb-finale__grid">
+      <div><Eyebrow>Take the next step</Eyebrow><h2>Know the DAO.<br/>Then help shape it.</h2></div>
+      <div><p>Explore the reference library or connect your wallet to join the member experience. New wallets complete one short registration; recognised members go straight in.</p><div><Link className="button button--secondary" to="/resources">Open Resources</Link><button className="button button--primary" onClick={onJoin}>Join Redbelly DAO <ArrowRight size={16}/></button></div></div>
     </div></section>
   </>
 }
